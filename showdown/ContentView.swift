@@ -30,13 +30,9 @@ struct ContentView: View {
         TabView (selection: $tabSelection.onUpdate {
             hapticFeedback(value: tabSelection)
         }) {
-            Text("Showdown")
+            Text("Battle")
                 .tabItem {
-                    VStack {
-                        Image("showdown")
-                            .renderingMode(.template)
-                        Text("Showdown!")
-                    }
+                    Label("Battle", image: "pkball")
                 }
             Text("Account")
                 .tabItem {
