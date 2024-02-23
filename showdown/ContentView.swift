@@ -21,7 +21,7 @@ extension Binding {
 struct ContentView: View {
     @State private var tabSelection: Int = 1
     
-    func hapticFeedback(value: Int){
+    func hapticFeedback(value: Int) {
         self.tabSelection = value
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
@@ -32,7 +32,12 @@ struct ContentView: View {
         }) {
             Text("Showdown")
                 .tabItem {
-                    Label("Showdown!", image: "showdown")                }
+                    VStack {
+                        Image("showdown")
+                            .renderingMode(.template)
+                        Text("Showdown!")
+                    }
+                }
             Text("Account")
                 .tabItem {
                     Label("Account", systemImage: "person")
@@ -40,7 +45,8 @@ struct ContentView: View {
             Text("Settings")
                 .tabItem {
                     Label("Settings", systemImage: "gear")
-                }        }
+                }
+        }
     }
 }
 
