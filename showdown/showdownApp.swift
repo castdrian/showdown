@@ -9,6 +9,12 @@ import SwiftUI
 
 @main
 struct showdownApp: App {
+    let showdownService = ShowdownService.shared
+    
+    init() {
+        showdownService.connectToServer()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

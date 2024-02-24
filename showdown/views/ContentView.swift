@@ -20,6 +20,7 @@ extension Binding {
 
 struct ContentView: View {
     @State private var tabSelection: Int = 1
+    @State var showingPopup = false
     
     func hapticFeedback(value: Int) {
         self.tabSelection = value

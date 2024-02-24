@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
-                Text("Connected as castdrian")
+                Text("Connected as user")
                     .foregroundColor(.gray)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 8)

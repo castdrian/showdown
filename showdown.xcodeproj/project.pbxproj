@@ -13,6 +13,9 @@
 		3A2DD6032B8922FB00EC365F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2DD6022B8922FB00EC365F /* Preview Assets.xcassets */; };
 		3A2DD6142B89F47600EC365F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3A2DD6132B89F47600EC365F /* Config.xcconfig */; };
 		3A2DD6162B8A07CF00EC365F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2DD6152B8A07CF00EC365F /* HomeView.swift */; };
+		3AB6ED422B8A3D29009B24B4 /* ShowdownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ED412B8A3D29009B24B4 /* ShowdownService.swift */; };
+		3AB6ED452B8A3DD3009B24B4 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 3AB6ED442B8A3DD3009B24B4 /* Defaults */; };
+		3AB6ED482B8A3DE8009B24B4 /* NWWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3AB6ED472B8A3DE8009B24B4 /* NWWebSocket */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,7 @@
 		3A2DD6022B8922FB00EC365F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A2DD6132B89F47600EC365F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		3A2DD6152B8A07CF00EC365F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3AB6ED412B8A3D29009B24B4 /* ShowdownService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowdownService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB6ED452B8A3DD3009B24B4 /* Defaults in Frameworks */,
+				3AB6ED482B8A3DE8009B24B4 /* NWWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +61,12 @@
 		3A2DD5FA2B8922FA00EC365F /* showdown */ = {
 			isa = PBXGroup;
 			children = (
+				3AB6ED402B8A3D0D009B24B4 /* service */,
+				3AB6ED3F2B8A3CF3009B24B4 /* views */,
 				3A2DD5FB2B8922FA00EC365F /* showdownApp.swift */,
-				3A2DD5FD2B8922FA00EC365F /* ContentView.swift */,
 				3A2DD5FF2B8922FB00EC365F /* Assets.xcassets */,
 				3A2DD6012B8922FB00EC365F /* Preview Content */,
 				3A2DD6132B89F47600EC365F /* Config.xcconfig */,
-				3A2DD6152B8A07CF00EC365F /* HomeView.swift */,
 			);
 			path = showdown;
 			sourceTree = "<group>";
@@ -71,6 +77,23 @@
 				3A2DD6022B8922FB00EC365F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3AB6ED3F2B8A3CF3009B24B4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3A2DD6152B8A07CF00EC365F /* HomeView.swift */,
+				3A2DD5FD2B8922FA00EC365F /* ContentView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3AB6ED402B8A3D0D009B24B4 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6ED412B8A3D29009B24B4 /* ShowdownService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +112,10 @@
 			dependencies = (
 			);
 			name = showdown;
+			packageProductDependencies = (
+				3AB6ED442B8A3DD3009B24B4 /* Defaults */,
+				3AB6ED472B8A3DE8009B24B4 /* NWWebSocket */,
+			);
 			productName = showdown;
 			productReference = 3A2DD5F82B8922FA00EC365F /* showdown.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +144,10 @@
 				Base,
 			);
 			mainGroup = 3A2DD5EF2B8922FA00EC365F;
+			packageReferences = (
+				3AB6ED432B8A3DD3009B24B4 /* XCRemoteSwiftPackageReference "Defaults" */,
+				3AB6ED462B8A3DE8009B24B4 /* XCRemoteSwiftPackageReference "NWWebSocket" */,
+			);
 			productRefGroup = 3A2DD5F92B8922FA00EC365F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +177,7 @@
 			files = (
 				3A2DD6162B8A07CF00EC365F /* HomeView.swift in Sources */,
 				3A2DD5FE2B8922FA00EC365F /* ContentView.swift in Sources */,
+				3AB6ED422B8A3D29009B24B4 /* ShowdownService.swift in Sources */,
 				3A2DD5FC2B8922FA00EC365F /* showdownApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +388,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AB6ED432B8A3DD3009B24B4 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
+		3AB6ED462B8A3DE8009B24B4 /* XCRemoteSwiftPackageReference "NWWebSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pusher/NWWebSocket.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AB6ED442B8A3DD3009B24B4 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AB6ED432B8A3DD3009B24B4 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		3AB6ED472B8A3DE8009B24B4 /* NWWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AB6ED462B8A3DE8009B24B4 /* XCRemoteSwiftPackageReference "NWWebSocket" */;
+			productName = NWWebSocket;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A2DD5F02B8922FA00EC365F /* Project object */;
 }
