@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(\.openURL) var openURL
     @State private var disallowSpectators = false
     
     var body: some View {
@@ -23,7 +24,7 @@ struct HomeView: View {
                     )
                     .padding(.horizontal, 20)
             }.padding(.bottom, 25)
-                        
+            
             Group {
                 Text("Format:")
                     .padding(.horizontal, 20)
@@ -56,7 +57,7 @@ struct HomeView: View {
                             .foregroundColor(.white)
                             .font(.headline)
                             .bold()
-                            .padding(.bottom, 4) // Space between title and icons
+                            .padding(.bottom, 4)
                         HStack {
                             ForEach(0..<6) { _ in
                                 Image(systemName: "questionmark.app")
@@ -74,11 +75,24 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
             }
             
-            Toggle("Don't allow spectators", isOn: $disallowSpectators)
-                .padding(.horizontal, 20)
-                .padding(.top, 20)
+            HStack {
+                Toggle("Don't allow spectators", isOn: $disallowSpectators)
+                Spacer()
+            }
+            .onTapGesture {
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                disallowSpectators.toggle()
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 20)
             
-            Button("Battle!") {
+            Button(action: {}) {
+                HStack {
+                    Spacer()
+                    Text("Battle!")
+                    Spacer()
+                }
+                .contentShape(Rectangle())
             }
             .foregroundColor(.white)
             .font(.headline)
@@ -93,7 +107,15 @@ struct HomeView: View {
             
             HStack {
                 Spacer()
-                Button("Teambuilder") {
+                Button(action: {
+                    openURL(URL(string: "https://play.pokemonshowdown.com/teambuilder")!)
+                }) {
+                    HStack {
+                        Spacer()
+                        Text("Teambuilder")
+                        Spacer()
+                    }
+                    .contentShape(Rectangle())
                 }
                 .foregroundColor(.white)
                 .font(.headline)
@@ -108,30 +130,42 @@ struct HomeView: View {
             
             HStack {
                 Spacer()
-                Button("Ladder") {
-                }
-                .foregroundColor(.white)
-                .font(.headline)
-                .bold()
-                .frame(width: 200)
-                .padding(.vertical, 10)
-                .background(Color.green.opacity(0.5))
-                .cornerRadius(5)
+                Button(action: {
+                    openURL(URL(string: "https://play.pokemonshowdown.com/ladder")!)
+                }) {
+                    HStack {
+                        Spacer()
+                        Text("Ladder")
+                        Spacer()
+                    }
+                    .contentShape(Rectangle())
+                }                .foregroundColor(.white)
+                    .font(.headline)
+                    .bold()
+                    .frame(width: 200)
+                    .padding(.vertical, 10)
+                    .background(Color.green.opacity(0.5))
+                    .cornerRadius(5)
                 Spacer()
             }
             .padding(.top, 10)
-
+            
             HStack {
                 Spacer()
-                Button("Find a user") {
-                }
-                .foregroundColor(.white)
-                .font(.headline)
-                .bold()
-                .frame(width: 200)
-                .padding(.vertical, 10)
-                .background(Color.brown.opacity(0.5))
-                .cornerRadius(5)
+                Button(action: {}) {
+                    HStack {
+                        Spacer()
+                        Text("Find a user")
+                        Spacer()
+                    }
+                    .contentShape(Rectangle())
+                }                .foregroundColor(.white)
+                    .font(.headline)
+                    .bold()
+                    .frame(width: 200)
+                    .padding(.vertical, 10)
+                    .background(Color.brown.opacity(0.5))
+                    .cornerRadius(5)
                 Spacer()
             }
             .padding(.top, 10)
