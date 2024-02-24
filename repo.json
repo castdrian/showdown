@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "showdown",
+      "bundleIdentifier": "dev.castdrian.showdown",
+      "filename": "showdown.ipa",
+      "githubOwner": "castdrian",
+      "githubRepository": "showdown",
+      "developerName": "Adrian Castro",
+      "subtitle": "Pokémon Showdown! client for iOS",
+      "localizedDescription": "This application is a client for the Pokémon Showdown! battle simulator.",
+      "iconURL": "https://github.com/castdrian/showdown/blob/main/showdown/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png?raw=true",
+      "tintColor": "1d3d6d"
+    }
+  ]
+}
