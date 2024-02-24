@@ -30,9 +30,9 @@ struct ContentView: View {
         TabView (selection: $tabSelection.onUpdate {
             hapticFeedback(value: tabSelection)
         }) {
-            Text("Battle")
+            HomeView()
                 .tabItem {
-                    Label("Battle", image: "pkball")
+                    Label("Home", image: "pkball")
                 }
             Text("Account")
                 .tabItem {
