@@ -24,6 +24,11 @@ class ShowdownService {
         webSocket?.delegate = self
     }
     
+    func reconnectToServer() {
+        if (isConnected) { return }
+        connectToServer()
+    }
+    
     func disconnectFromServer() {
         webSocket?.disconnect()
         isConnected = false

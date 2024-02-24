@@ -16,6 +16,8 @@
 		3AB6ED422B8A3D29009B24B4 /* ShowdownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ED412B8A3D29009B24B4 /* ShowdownService.swift */; };
 		3AB6ED452B8A3DD3009B24B4 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 3AB6ED442B8A3DD3009B24B4 /* Defaults */; };
 		3AB6ED482B8A3DE8009B24B4 /* NWWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3AB6ED472B8A3DE8009B24B4 /* NWWebSocket */; };
+		3AB6ED4D2B8A4D21009B24B4 /* ServerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ED4C2B8A4D21009B24B4 /* ServerMessage.swift */; };
+		3AB6ED502B8A4F76009B24B4 /* BaseMessageObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ED4F2B8A4F76009B24B4 /* BaseMessageObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		3A2DD6132B89F47600EC365F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		3A2DD6152B8A07CF00EC365F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3AB6ED412B8A3D29009B24B4 /* ShowdownService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowdownService.swift; sourceTree = "<group>"; };
+		3AB6ED4C2B8A4D21009B24B4 /* ServerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMessage.swift; sourceTree = "<group>"; };
+		3AB6ED4F2B8A4F76009B24B4 /* BaseMessageObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMessageObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +95,19 @@
 		3AB6ED402B8A3D0D009B24B4 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				3AB6ED4E2B8A4F5B009B24B4 /* observers */,
 				3AB6ED412B8A3D29009B24B4 /* ShowdownService.swift */,
+				3AB6ED4C2B8A4D21009B24B4 /* ServerMessage.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		3AB6ED4E2B8A4F5B009B24B4 /* observers */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6ED4F2B8A4F76009B24B4 /* BaseMessageObserver.swift */,
+			);
+			path = observers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB6ED4D2B8A4D21009B24B4 /* ServerMessage.swift in Sources */,
 				3A2DD6162B8A07CF00EC365F /* HomeView.swift in Sources */,
 				3A2DD5FE2B8922FA00EC365F /* ContentView.swift in Sources */,
 				3AB6ED422B8A3D29009B24B4 /* ShowdownService.swift in Sources */,
+				3AB6ED502B8A4F76009B24B4 /* BaseMessageObserver.swift in Sources */,
 				3A2DD5FC2B8922FA00EC365F /* showdownApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
